@@ -58,7 +58,6 @@ def outgoing_arcs(graph, representation, vertex):
 
     raise ValueError("Неизвестное представление графа")
 
-
 # ============================================================
 # Пример работы на заданном графе
 # ============================================================
@@ -102,11 +101,13 @@ arc_list = np.array([
 forward_star_pointers = np.array([0, 2, 3, 7, 9, 9])
 
 forward_star_to = np.array([
-    3, 4,        # из 0
-    0,           # из 1
-    0, 1, 3, 4,  # из 2
-    1, 4         # из 3
+    3, 4,
+    0,
+    0, 1, 3, 4,
+    1, 4
 ])
+
+ordered_arc_list = (forward_star_pointers, forward_star_to)
 
 if __name__ == "__main__":
     vertex = 0
